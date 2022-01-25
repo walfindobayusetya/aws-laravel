@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use App\User;
 use App\Guru;
 use App\Mapel;
@@ -16,6 +15,7 @@ use App\Exports\GuruExport;
 use App\Imports\GuruImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class GuruController extends Controller
 {
@@ -276,10 +276,10 @@ class GuruController extends Controller
             if ($guru->id_card == Auth::user()->id_card) {
                 $cekAbsen = Absen::where('guru_id', $guru->id)->where('tanggal', date('Y-m-d'))->count();
                 if ($cekAbsen == 0) {
-                    if (date('w') != '0' && date('w') != '6') {
+                    if (date('w') == '0' || date('w') == '6') {
                         if (date('H:i:s') >= '06:00:00') {
                             if (date('H:i:s') >= '09:00:00') {
-                                if (date('H:i:s') >= '16:15:00') {
+                                if (date('H:i:s') >= '17:00:00') {
                                     Absen::create([
                                         'tanggal' => date('Y-m-d'),
                                         'guru_id' => $guru->id,
@@ -322,7 +322,7 @@ class GuruController extends Controller
                         $namaHari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
                         $d = date('w');
                         $hari = $namaHari[$d];
-                        return redirect()->back()->with('info', 'Maaf sekolah hari ' . $hari . ' libur!');
+                        return redirect()->back()->with('info', 'Maaf Synapse hari ' . $hari . ' libur!');
                     }
                 } else {
                     return redirect()->back()->with('warning', 'Maaf absensi tidak bisa dilakukan 2x!');

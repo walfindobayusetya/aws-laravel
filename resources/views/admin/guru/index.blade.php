@@ -78,7 +78,7 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nama Mapel</th>
+                    <th>Nama Kelas</th>
                     <th>Lihat Guru</th>
                 </tr>
             </thead>

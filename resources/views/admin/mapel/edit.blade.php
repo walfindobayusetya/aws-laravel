@@ -9,7 +9,7 @@
     <!-- general form elements -->
     <div class="card card-primary">
       <div class="card-header">
-        <h3 class="card-title">Edit Data Mapel</h3>
+        <h3 class="card-title">Edit </h3>
       </div>
       <!-- /.card-header -->
       <!-- form start -->
@@ -59,7 +59,7 @@
                             @if ($mapel->kelompok == 'C')
                                 selected
                             @endif
-                        >Pelajaran Keahlian</option>
+                        >Pelajaran Dasar</option>
                     </select>
                 </div>
             </div>

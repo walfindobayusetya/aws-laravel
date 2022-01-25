@@ -2,9 +2,10 @@
 
 namespace App;
 
-use Auth;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Siswa extends Model
 {
@@ -21,13 +22,6 @@ class Siswa extends Model
     {
         $guru = Guru::where('id_card', Auth::user()->id_card)->first();
         $nilai = Ulangan::where('siswa_id', $id)->where('guru_id', $guru->id)->first();
-        return $nilai;
-    }
-
-    public function sikap($id)
-    {
-        $guru = Guru::where('id_card', Auth::user()->id_card)->first();
-        $nilai = Sikap::where('siswa_id', $id)->where('guru_id', $guru->id)->first();
         return $nilai;
     }
 

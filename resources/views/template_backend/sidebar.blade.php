@@ -11,7 +11,7 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Operator')
+                @if (Auth::user()->role == 'Admin')
                     <li class="nav-item has-treeview" id="liDashboard">
                         <a href="#" class="nav-link" id="Dashboard">
                             <i class="nav-icon fas fa-home"></i>
@@ -39,7 +39,7 @@
                         <a href="#" class="nav-link" id="MasterData">
                             <i class="nav-icon fas fa-edit"></i>
                             <p>
-                                Master Data
+                                Data Synapse
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -82,56 +82,6 @@
                             </li>
                         </ul>
                     </li>
-                    @if (Auth::user()->role == "Admin")
-                        <li class="nav-item has-treeview" id="liViewTrash">
-                            <a href="#" class="nav-link" id="ViewTrash">
-                                <i class="nav-icon fas fa-recycle"></i>
-                                <p>
-                                    View Trash
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview ml-4">
-                                <li class="nav-item">
-                                    <a href="{{ route('jadwal.trash') }}" class="nav-link" id="TrashJadwal">
-                                        <i class="fas fa-calendar-alt nav-icon"></i>
-                                        <p>Trash Jadwal</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('guru.trash') }}" class="nav-link" id="TrashGuru">
-                                        <i class="fas fa-users nav-icon"></i>
-                                        <p>Trash Guru</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('kelas.trash') }}" class="nav-link" id="TrashKelas">
-                                        <i class="fas fa-home nav-icon"></i>
-                                        <p>Trash Kelas</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('siswa.trash') }}" class="nav-link" id="TrashSiswa">
-                                        <i class="fas fa-users nav-icon"></i>
-                                        <p>Trash Siswa</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('mapel.trash') }}" class="nav-link" id="TrashMapel">
-                                        <i class="fas fa-book nav-icon"></i>
-                                        <p>Trash Mapel</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('user.trash') }}" class="nav-link" id="TrashUser">
-                                        <i class="fas fa-user nav-icon"></i>
-                                        <p>Trash User</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    @else
-                    @endif
                     <li class="nav-item">
                         <a href="{{ route('guru.absensi') }}" class="nav-link" id="AbsensiGuru">
                             <i class="fas fa-calendar-check nav-icon"></i>
@@ -151,12 +101,6 @@
                                 <a href="{{ route('ulangan-kelas') }}" class="nav-link" id="Ulangan">
                                     <i class="fas fa-file-alt nav-icon"></i>
                                     <p>Nilai Ulangan</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('sikap-kelas') }}" class="nav-link" id="Sikap">
-                                    <i class="fas fa-file-alt nav-icon"></i>
-                                    <p>Nilai Sikap</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -213,18 +157,6 @@
                                     <p>Entry Nilai Ulangan</p>
                                 </a>
                             </li>
-                            @if (
-                                Auth::user()->guru(Auth::user()->id_card)->mapel->nama_mapel == "Pendidikan Agama dan Budi Pekerti" ||
-                                Auth::user()->guru(Auth::user()->id_card)->mapel->nama_mapel == "Pendidikan Pancasila dan Kewarganegaraan"
-                            )
-                                <li class="nav-item">
-                                    <a href="{{ route('sikap.index') }}" class="nav-link" id="SikapGuru">
-                                        <i class="fas fa-file-alt nav-icon"></i>
-                                        <p>Entry Nilai Sikap</p>
-                                    </a>
-                                </li>
-                            @else
-                            @endif
                             <li class="nav-item">
                                 <a href="{{ route('rapot.index') }}" class="nav-link" id="RapotGuru">
                                     <i class="fas fa-file-alt nav-icon"></i>
@@ -256,12 +188,6 @@
                         <a href="{{ route('ulangan.siswa') }}" class="nav-link" id="UlanganSiswa">
                             <i class="fas fa-file-alt nav-icon"></i>
                             <p>Ulangan</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('sikap.siswa') }}" class="nav-link" id="SikapSiswa">
-                            <i class="fas fa-file-alt nav-icon"></i>
-                            <p>Sikap</p>
                         </a>
                     </li>
                     <li class="nav-item">

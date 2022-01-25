@@ -21,11 +21,6 @@
                         <td>{{ $kelas->nama_kelas }}</td>
                     </tr>
                     <tr>
-                        <td>Wali Kelas</td>
-                        <td>:</td>
-                        <td>{{ $kelas->guru->nama_guru }}</td>
-                    </tr>
-                    <tr>
                         <td>Jumlah Siswa</td>
                         <td>:</td>
                         <td>{{ $siswa->count() }}</td>

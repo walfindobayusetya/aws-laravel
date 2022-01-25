@@ -90,7 +90,7 @@
                       <option value="">-- Pilih Kelompok Mapel --</option>
                       <option value="A">Pelajaran Umum</option>
                       <option value="B">Pelajaran Khusus</option>
-                      <option value="C">Pelajaran Keahlian</option>
+                      <option value="C">Pelajaran Dasar</option>
                     </select>
                 </div>
               </div>

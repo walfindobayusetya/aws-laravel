@@ -1,8 +1,4 @@
 @extends('template_backend.home')
-@section('heading', 'Entry Nilai sikap')
-@section('page')
-  <li class="breadcrumb-item active">Entry Nilai sikap</li>
-@endsection
 @section('content')
 <div class="col-md-12">
     <div class="card">
@@ -36,7 +32,6 @@
                     <tr>
                       <td>{{ $loop->iteration }}</td>
                       <td>{{ $data[0]->rapot($val)->nama_kelas }}</td>
-                      <td><a href="{{ route('sikap.show', Crypt::encrypt($val)) }}" class="btn btn-primary btn-sm"><i class="nav-icon fas fa-pen"></i> &nbsp; Entry Nilai</a></td>
                     </tr>
                   @endforeach
                 </tbody>
@@ -51,6 +46,5 @@
   <script>
     $("#NilaiGuru").addClass("active");
     $("#liNilaiGuru").addClass("menu-open");
-    $("#SikapGuru").addClass("active");
   </script>
 @endsection

@@ -14,49 +14,49 @@ class PaketSeeder extends Seeder
     {
         DB::table('paket')->insert([
             'id' => 1,
-            'ket' => 'Bisnis kontruksi dan Properti',
+            'ket' => 'Fullstack Web',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('paket')->insert([
             'id' => 2,
-            'ket' => 'Desain Permodelan dan Informasi Bangunan',
+            'ket' => ' Fullstack Mobile',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('paket')->insert([
             'id' => 3,
-            'ket' => 'Elektronika Industri',
+            'ket' => ' Programming for kids',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('paket')->insert([
             'id' => 4,
-            'ket' => 'Otomasi Industri',
+            'ket' => 'Machine Learning',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('paket')->insert([
             'id' => 5,
-            'ket' => "Teknik Pemesinan",
+            'ket' => "Deep Learning",
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('paket')->insert([
             'id' => 6,
-            'ket' => 'Teknik dan Bisnis Sepeda Motor',
+            'ket' => 'Artificial Intelligence',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('paket')->insert([
             'id' => 7,
-            'ket' => 'Rekayasa Perangkat Lunak',
+            'ket' => 'Best Project',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('paket')->insert([
             'id' => 8,
-            'ket' => "Teknik Pengelasan",
+            'ket' => "Internet of things",
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

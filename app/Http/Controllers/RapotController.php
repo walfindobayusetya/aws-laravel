@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use App\Nilai;
 use App\Guru;
 use App\Siswa;
@@ -10,11 +9,11 @@ use App\Kelas;
 use App\Mapel;
 use App\Jadwal;
 use App\Rapot;
-use App\Sikap;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class RapotController extends Controller
 {
@@ -167,17 +166,8 @@ class RapotController extends Controller
     {
         $siswa = Siswa::where('no_induk', Auth::user()->no_induk)->first();
         $kelas = Kelas::findorfail($siswa->kelas_id);
-        $pai = Mapel::where('nama_mapel', 'Pendidikan Agama dan Budi Pekerti')->first();
-        $ppkn = Mapel::where('nama_mapel', 'Pendidikan Pancasila dan Kewarganegaraan')->first();
-        if ($pai != null && $ppkn != null) {
-            $Spai = Sikap::where('siswa_id', $siswa->id)->where('mapel_id', $pai->id)->first();
-            $Sppkn = Sikap::where('siswa_id', $siswa->id)->where('mapel_id', $ppkn->id)->first();
-        } else {
-            $Spai = "";
-            $Sppkn = "";
-        }
         $jadwal = Jadwal::where('kelas_id', $kelas->id)->orderBy('mapel_id')->get();
         $mapel = $jadwal->groupBy('mapel_id');
-        return view('siswa.rapot', compact('siswa', 'kelas', 'mapel', 'Spai', 'Sppkn'));
+        return view('siswa.rapot', compact('siswa', 'kelas', 'mapel'));
     }
 }
